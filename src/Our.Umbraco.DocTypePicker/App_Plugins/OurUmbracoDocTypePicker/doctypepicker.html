@@ -1,0 +1,14 @@
+﻿<div ng-controller="OurUmbracoDocTypePicker.DocTypePicker" class="doctypepicker">
+
+    <table>
+        <tbody>
+            <tr ng-repeat="doctype in doctypes">
+                <td>
+                    <input id="{{doctype.id}}" name="{{doctype.id}}" type="checkbox" ng-model="doctype.checked">
+                    <label for="{{doctype.id}}">{{doctype.name}}</label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

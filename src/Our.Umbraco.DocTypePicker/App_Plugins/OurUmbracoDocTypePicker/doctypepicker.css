@@ -1,0 +1,101 @@
+﻿.youtubepicker .header {
+    width: 100%;
+}
+
+    .youtubepicker .header input.searchTerm {
+        width: 97%;
+        margin-bottom: 5px;
+    }
+
+    .youtubepicker .header select {
+        float: left;
+        padding-right: 5px;
+        width: 50%;
+    }
+
+    .youtubepicker .header button.btn {
+        float: right;
+        width: 48%;
+    }
+
+    .youtubepicker .header button span {
+        text-align: center;
+        width: 100%;
+    }
+
+    .youtubepicker .header div {
+        float: right;
+        text-align: right;
+        padding-top: 3px;
+    }
+
+    .youtubepicker .header > div span {
+        font-weight: bold;
+    }
+
+.youtubepicker .pagination {
+    width: 100%;
+    margin: 10px 0;
+}
+
+    .youtubepicker .pagination ul {
+        width: 100%;
+        list-style: none;
+    }
+
+        .youtubepicker .pagination ul li {
+            width: 32.7%;
+            display: inline-block;
+        }
+
+        .youtubepicker .pagination ul > li > a, .pagination ul > li > span {
+            float: none;
+            padding: 4px 12px;
+            line-height: 20px;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+    .youtubepicker .pagination .left {
+        text-align: left;
+    }
+        .youtubepicker .pagination .left a {
+            border-left-width: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: #53a93f;
+            *background-color: #53a93f;
+            background-image: linear-gradient(to bottom,#53a93f,#53a93f);
+            background-repeat: repeat-x;
+        }
+        .youtubepicker .pagination .left.disabled a {
+            background-color: #fff;
+            *background-color: #fff;
+            background-image: linear-gradient(to bottom,#fff,#fff);
+        }
+
+    .youtubepicker .pagination .center {
+        text-align: center;
+    }
+    .youtubepicker .pagination .center span {
+        border-radius: 10px;
+    }
+
+    .youtubepicker .pagination .right {
+        text-align: right;
+    }
+    .youtubepicker .pagination .right a {
+        border-right-width: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: #53a93f;
+        *background-color: #53a93f;
+        background-image: linear-gradient(to bottom,#53a93f,#53a93f);
+        background-repeat: repeat-x;
+    }
+    .youtubepicker .pagination .right.disabled a {
+        background-color: #fff;
+        *background-color: #fff;
+        background-image: linear-gradient(to bottom,#fff,#fff);
+    }
