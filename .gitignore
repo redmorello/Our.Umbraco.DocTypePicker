@@ -82,3 +82,5 @@ src/.vs/
 *.zip
 keys.txt
 src/Website/App_Plugins/Our.Umbraco.DocTypePicker/
+
+src/Website/App_Plugins/OurUmbracoDocTypePicker/
