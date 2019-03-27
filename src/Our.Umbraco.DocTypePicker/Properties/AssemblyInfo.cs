@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Our.Umbraco.YouTubePicker")]
-[assembly: AssemblyDescription("Umbraco CMS Datatype - YouTube Picker")]
+[assembly: AssemblyTitle("Our.Umbraco.DocTypePicker")]
+[assembly: AssemblyDescription("Umbraco CMS Datatype - Document Type Picker")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RedMorello Limited")]
-[assembly: AssemblyProduct("Our.Umbraco.YouTubePicker")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyProduct("Our.Umbraco.DocTypePicker")]
+[assembly: AssemblyCopyright("Copyright © 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,6 +21,6 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("ef873cb9-db5d-42a8-a68f-77d528c6968b")]
 
-[assembly: AssemblyVersion("2.0.2.0")]
-[assembly: AssemblyFileVersion("2.0.2.0")]
-[assembly: AssemblyInformationalVersion("2.0.2")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0")]

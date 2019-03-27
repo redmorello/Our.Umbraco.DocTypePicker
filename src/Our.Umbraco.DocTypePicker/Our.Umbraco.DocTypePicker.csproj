@@ -47,7 +47,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\OurUmbracoDocTypePicker\doctypepicker.controller.js" />
+    <Content Include="App_Plugins\OurUmbracoDocTypePicker\doctypepicker.css" />
+    <Content Include="App_Plugins\OurUmbracoDocTypePicker\doctypepicker.html" />
     <Content Include="App_Plugins\OurUmbracoDocTypePicker\package.manifest" />
+    <Content Include="App_Plugins\OurUmbracoDocTypePicker\selection.html" />
     <Content Include="Our.Umbraco.DocTypePicker.nuspec" />
   </ItemGroup>
   <ItemGroup>
