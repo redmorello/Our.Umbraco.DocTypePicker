@@ -2,7 +2,15 @@
 
     <table>
         <tbody>
-            <tr ng-repeat="doctype in doctypes">
+            <tr ng-show="model.config.listtype == 'single'">
+                <td>
+                    <select ng-model="doctypeSelected" ng-change="changedValue(doctypeSelected)">
+                        <option value="">Please select....</option>
+                        <option data-ng-repeat="doctype in doctypes" value="{{doctype.id}}" ng-selected="doctype.selected">{{doctype.alias}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr ng-repeat="doctype in doctypes" ng-show="model.config.listtype == 'multi'">
                 <td>
                     <input id="{{doctype.id}}" name="{{doctype.id}}" type="checkbox" ng-model="doctype.checked">
                     <label for="{{doctype.id}}">{{doctype.name}}</label>
