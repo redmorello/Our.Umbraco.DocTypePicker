@@ -20,7 +20,7 @@
 					{
 						label: "List type for render",
 						description: "List type for render",
-						key: "listtype",
+						key: "multiple",
 						view: "~/App_Plugins/OurUmbracoDocTypePicker/selection.html"
 					}
 				]

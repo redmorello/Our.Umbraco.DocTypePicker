@@ -1,22 +1,21 @@
-﻿<div ng-controller="OurUmbracoDocTypePicker.DocTypePicker" class="doctypepicker">
+﻿<div ng-controller="OurUmbracoDocTypePicker.DocTypePicker" ng-switch="model.config.multiple">
 
-    <table>
-        <tbody>
-            <tr ng-show="model.config.listtype == 'single'">
-                <td>
-                    <select ng-model="doctypeSelected" ng-change="changedValue(doctypeSelected)">
-                        <option value="">Please select....</option>
-                        <option data-ng-repeat="doctype in doctypes" value="{{doctype.id}}" ng-selected="doctype.selected">{{doctype.alias}}</option>
-                    </select>
-                </td>
-            </tr>
-            <tr ng-repeat="doctype in doctypes" ng-show="model.config.listtype == 'multi'">
-                <td>
-                    <input id="{{doctype.id}}" name="{{doctype.id}}" type="checkbox" ng-model="doctype.checked">
-                    <label for="{{doctype.id}}">{{doctype.name}}</label>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <select name="dropDownList"
+            class="umb-property-editor umb-dropdown"
+            ng-switch-default
+            ng-change="updateSingleDropdownValue()"
+            ng-model="model.singleDropdownValue"
+            ng-options="item.name for item in model.config.items track by item.id"
+            ng-required="model.validation.mandatory">
+        <option></option>
+    </select>
 
+    <!--NOTE: This ng-switch is required because ng-multiple doesn't actually support dynamic bindings with multi-select lists -->
+    <select name="dropDownList"
+            class="umb-property-editor umb-dropdown"
+            ng-switch-when="true"
+            multiple
+            ng-model="model.value"
+            ng-options="item.id as item.name for item in model.config.items"
+            ng-required="model.validation.mandatory"></select>
 </div>
