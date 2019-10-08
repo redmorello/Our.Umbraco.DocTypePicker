@@ -1,18 +1,22 @@
-<?xml version="1.0"?>
-<package >
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
     <authors>Ian Houghton</authors>
     <owners>Ian Houghton</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://github.com/redmorello/Our.Umbraco.DocTypePicker/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/redmorello/Our.Umbraco.DocTypePicker/</projectUrl>
     <iconUrl>https://github.com/redmorello/Our.Umbraco.DocTypePicker/blob/master/images/doctypepicker.png?raw=true</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Umbraco CMS Datatype - Document Type Picker</description>
-    <releaseNotes>Removed web.config from package.</releaseNotes>
+    <releaseNotes>Added dependency on UmbracoCms 8.0.0</releaseNotes>
     <copyright>Copyright 2019</copyright>
+    <language>en-GB</language>
     <tags>Our.Umbraco.DocTypePicker Umbraco Document Type Property Editor Our CMS Contrib lib library</tags>
+    <dependencies>
+      <dependency id="UmbracoCms" version="8.0.0" />
+    </dependencies>
   </metadata>
 </package>
