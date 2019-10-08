@@ -1,6 +1,6 @@
 ﻿<div ng-controller="OurUmbracoDocTypePicker.DocTypePicker" class="doctypepicker">
 
-    <table>
+    <table ng-class="{multi: model.config.listtype == 'multi'}">
         <tbody>
             <tr ng-show="model.config.listtype == 'single'">
                 <td>
@@ -10,7 +10,7 @@
                     </select>
                 </td>
             </tr>
-            <tr ng-repeat="doctype in doctypes" ng-show="model.config.listtype == 'multi'">
+            <tr class="multi" ng-repeat="doctype in doctypes" ng-show="model.config.listtype == 'multi'">
                 <td>
                     <input id="{{doctype.id}}" name="{{doctype.id}}" type="checkbox" ng-model="doctype.checked">
                     <label for="{{doctype.id}}">{{doctype.name}}</label>

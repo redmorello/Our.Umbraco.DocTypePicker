@@ -1,5 +1,8 @@
-﻿.doctypepicker {
-    
+﻿.doctypepicker table.multi {
+    max-height: 200px;
+    overflow-y: scroll;
+    display: block;
+    width: 100%;
 }
 
 .doctypepicker select {
