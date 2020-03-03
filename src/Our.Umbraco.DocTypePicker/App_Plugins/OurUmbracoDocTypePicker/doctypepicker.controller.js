@@ -4,7 +4,8 @@
         //setup the default config
         var config = {
             items: [],
-            multiple: false
+            multiple: false,
+            useToggle:false
         };
 
         //map the user config
@@ -28,7 +29,7 @@
                 }
             } else {
                 for (var j = 0; j < $scope.model.config.items.length; j++) {
-                    if ($scope.model.value == $scope.model.config.items[j].id) {
+                    if ($scope.model.value === $scope.model.config.items[j].id) {
                         $scope.model.config.items[j].selected = true;
                         break;
                     }
@@ -38,6 +39,8 @@
 
         //ensure this is a bool, old data could store zeros/ones or string versions
         $scope.model.config.multiple = Object.toBoolean($scope.model.config.multiple);
+        $scope.model.config.useToggle = Object.toBoolean($scope.model.config.useToggle);
+
 
         function convertArrayToDictionaryArray(model) {
             //now we need to format the items in the dictionary because we always want to have an array
@@ -49,7 +52,7 @@
             return newItems;
         }
 
-        function convertObjectToDictionaryArray(model) {
+        function convertObjectToDictionaryArray() {
             //now we need to format the items in the dictionary because we always want to have an array
             var newItems = [];
             var vals = _.values($scope.model.config.items);
@@ -65,7 +68,29 @@
 
         $scope.updateSingleDropdownValue = function () {
             $scope.model.value = [$scope.model.singleDropdownValue];
-        }
+        };
+
+
+        $scope.updateMultiToggle = function updateMultiToggle(item) {
+            if ($scope.model.value === "") {
+                $scope.model.value = [];
+            }
+
+            item.checked = !item.checked;
+
+            if (item.checked) {
+                $scope.model.value.push(item.id);
+            } else {
+                var index = $scope.model.value.indexOf(item.id);
+                if (index !== -1) $scope.model.value.splice(index, 1);
+            }
+
+            // set to null for mandatory to work
+            if ($scope.model.value.length === 0) {
+                $scope.model.value = null;
+            }
+        };
+
 
         if (angular.isArray($scope.model.config.items)) {
             //PP: I dont think this will happen, but we have tests that expect it to happen..
@@ -104,7 +129,8 @@
 
         // if we run in multiple mode, make sure the model is an array (in case the property was previously saved in single mode)
         // also explicitly set the model to null if it's an empty array, so mandatory validation works on the client
-        if ($scope.model.config.multiple === "1" && $scope.model.value) {
+
+        if ($scope.model.config.multiple && $scope.model.value) {
             $scope.model.value = !Array.isArray($scope.model.value) ? [$scope.model.value] : $scope.model.value;
             if ($scope.model.value.length === 0) {
                 $scope.model.value = null;
