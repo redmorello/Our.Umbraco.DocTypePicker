@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>$id$</id>
-    <version>$version$</version>
+    <version>2.0.3</version>
     <title>$title$</title>
     <authors>Ian Houghton</authors>
     <owners>Ian Houghton</owners>
@@ -12,7 +12,7 @@
     <iconUrl>https://github.com/redmorello/Our.Umbraco.DocTypePicker/blob/master/images/doctypepicker.png?raw=true</iconUrl>
     <description>Umbraco CMS Datatype - Document Type Picker</description>
     <releaseNotes>Added dependency on UmbracoCms 8.0.0</releaseNotes>
-    <copyright>Copyright 2019</copyright>
+    <copyright>Copyright 2020</copyright>
     <language>en-GB</language>
     <tags>Our.Umbraco.DocTypePicker Umbraco Document Type Property Editor Our CMS Contrib lib library</tags>
     <dependencies>
