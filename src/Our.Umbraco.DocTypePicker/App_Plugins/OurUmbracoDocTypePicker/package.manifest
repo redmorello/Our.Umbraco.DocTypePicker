@@ -24,8 +24,8 @@
 						"view": "~/App_Plugins/OurUmbracoDocTypePicker/selection.html"
 					},
 					{
-						"label": "Use toggle for multiple options",
-						"description": "Use toggle controls instead of dropdown select",
+						"label": "Use toggles in multiple mode",
+						"description": "Use toggle controls instead of dropdown",
 						"key": "useToggle",
 						"view": "boolean"
 					},
