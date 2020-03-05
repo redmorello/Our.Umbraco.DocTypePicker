@@ -1,11 +1,15 @@
 ﻿angular.module("umbraco")
     .controller("OurUmbracoDocTypePicker.DocTypePicker", function ($scope, $http) {
+        window.scope = $scope.model;
 
         //setup the default config
         var config = {
             items: [],
             multiple: false,
-            useToggle:false
+            useToggle: false,
+            elementFilter: 0,
+            templateFilter: 0,
+            filterTerm: ''
         };
 
         //map the user config
@@ -13,8 +17,16 @@
 
         //map back to the model
         $scope.model.config = config;
+
+
         
-        $http.get("backoffice/OurUmbracoDocTypePicker/DocTypePickerApi/GetAllDocumentTypes").then(function (response) {
+        $http.get("backoffice/OurUmbracoDocTypePicker/DocTypePickerApi/GetAllDocumentTypes", { params: {
+                    elementFilter: $scope.model.config.elementFilter,
+                    filterTerm: $scope.model.config.filterTerm,
+                    templateFilter: $scope.model.config.templateFilter
+                }
+            })
+            .then(function (response) {
 
             $scope.model.config.items = response.data;
 
@@ -28,9 +40,9 @@
                     }
                 }
             } else {
-                for (var j = 0; j < $scope.model.config.items.length; j++) {
-                    if ($scope.model.value === $scope.model.config.items[j].id) {
-                        $scope.model.config.items[j].selected = true;
+                for (var k = 0; k < $scope.model.config.items.length; k++) {
+                    if ($scope.model.value === $scope.model.config.items[k].id) {
+                        $scope.model.config.items[k].selected = true;
                         break;
                     }
                 }
@@ -129,6 +141,7 @@
 
         // if we run in multiple mode, make sure the model is an array (in case the property was previously saved in single mode)
         // also explicitly set the model to null if it's an empty array, so mandatory validation works on the client
+        console.log($scope.model.config.multiple);
 
         if ($scope.model.config.multiple && $scope.model.value) {
             $scope.model.value = !Array.isArray($scope.model.value) ? [$scope.model.value] : $scope.model.value;

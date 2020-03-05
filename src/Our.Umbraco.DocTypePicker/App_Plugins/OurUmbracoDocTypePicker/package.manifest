@@ -24,10 +24,28 @@
 						"view": "~/App_Plugins/OurUmbracoDocTypePicker/selection.html"
 					},
 					{
-						"label": "Use toggles in multiple mode",
-						"description": "Use toggle controls instead of dropdown",
+						"label": "Use toggle for multiple options",
+						"description": "Use toggle controls instead of dropdown select",
 						"key": "useToggle",
 						"view": "boolean"
+					},
+					{
+						"label": "Filter for document types with templates",
+						"description": "Can be used to filter out settings document types that don't have templates",
+						"key": "templateFilter",
+						"view": "~/App_Plugins/OurUmbracoDocTypePicker/templatefilter.html"
+					},
+					{
+						"label": "All document types, pages only or elements only",
+						"description": "Filter the document types by page/element type",
+						"key": "elementFilter",
+						"view": "~/App_Plugins/OurUmbracoDocTypePicker/elementfilter.html"
+					},
+					{
+						"label": "Filter term",
+						"description": "Only include the document types that contain this term",
+						"key": "filterTerm",
+						"view": "textstring"
 					}
 				]
 			}
