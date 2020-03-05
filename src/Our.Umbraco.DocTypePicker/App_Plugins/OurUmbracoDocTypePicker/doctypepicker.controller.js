@@ -1,6 +1,5 @@
 ﻿angular.module("umbraco")
     .controller("OurUmbracoDocTypePicker.DocTypePicker", function ($scope, $http) {
-        window.scope = $scope.model;
 
         //setup the default config
         var config = {
@@ -141,7 +140,6 @@
 
         // if we run in multiple mode, make sure the model is an array (in case the property was previously saved in single mode)
         // also explicitly set the model to null if it's an empty array, so mandatory validation works on the client
-        console.log($scope.model.config.multiple);
 
         if ($scope.model.config.multiple && $scope.model.value) {
             $scope.model.value = !Array.isArray($scope.model.value) ? [$scope.model.value] : $scope.model.value;
