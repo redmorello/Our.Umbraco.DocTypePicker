@@ -9,7 +9,7 @@
 			/*the icon*/
 			"icon": "icon-bulleted-list",
 			/*grouping for "Select editor" dialog*/
-			group: "Lists",
+			"group": "Lists",
 			/*the HTML file we will load for the editor*/
 			"editor": {
 				"view": "~/App_Plugins/OurUmbracoDocTypePicker/doctypepicker.html",
