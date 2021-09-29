@@ -20,7 +20,7 @@ namespace Our.Umbraco.DocTypePicker.Controllers
         {
             var retval = new List<Object>();
 
-            foreach (var doctype in Services.ContentTypeService.GetAllContentTypes().OrderBy(d => d.Name))
+            foreach (var doctype in Services.ContentTypeService.GetAll().OrderBy(d => d.Name))
                 retval.Add(new { id = doctype.Id, alias = doctype.Alias, name = doctype.Name });
 
             return retval;
