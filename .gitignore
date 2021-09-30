@@ -84,3 +84,8 @@ keys.txt
 src/Website/App_Plugins/Our.Umbraco.DocTypePicker/
 
 src/Website/App_Plugins/OurUmbracoDocTypePicker/
+Our.Umbraco.DocTypePicker/.vs
+Our.Umbraco.DocTypePicker/output
+WebsiteV8/App_Data/TEMP
+WebsiteV8/App_Data/Logs
+WebsiteV8/Umbraco

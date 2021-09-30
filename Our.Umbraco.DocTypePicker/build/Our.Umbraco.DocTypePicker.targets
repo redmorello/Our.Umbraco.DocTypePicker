@@ -1,0 +1,27 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <OurUmbracoDocTypePickerContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\OurUmbracoDocTypePicker\**\*.*</OurUmbracoDocTypePickerContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyOurUmbracoDocTypePickerAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <OurUmbracoDocTypePickerContentFiles Include="$(OurUmbracoDocTypePickerContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying Our.Umbraco.DocTypePicker files: $(OurUmbracoDocTypePickerContentFilesPath) - #@(OurUmbracoDocTypePickerContentFiles->Count()) files"  Importance="high" />
+        <Copy
+            SourceFiles="@(OurUmbracoDocTypePickerContentFiles)"
+            DestinationFiles="@(OurUmbracoDocTypePickerContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\OurUmbracoDocTypePicker\%(RecursiveDir)%(Filename)%(Extension)')"
+            SkipUnchangedFiles="true" />
+
+    </Target>
+
+    <Target Name="ClearOurUmbracoDocTypePickerAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <OurUmbracoDocTypePickerDir Include="$(MSBuildProjectDirectory)\App_Plugins\OurUmbracoDocTypePicker\" />
+        </ItemGroup>
+        <Message Text="Clear old OurUmbracoDocTypePicker data"  Importance="high" />
+        <RemoveDir Directories="@(OurUmbracoDocTypePickerDir)"  />
+    </Target>
+
+</Project>
