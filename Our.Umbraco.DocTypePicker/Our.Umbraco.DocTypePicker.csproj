@@ -6,11 +6,11 @@
   <!-- nuget package stuff -->
   <PropertyGroup>
     <PackageId>Our.Umbraco.DocTypePicker</PackageId>
-    <Version>3.0.0</Version>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <Version>3.0.1</Version>
+    <AssemblyVersion>3.0.1.0</AssemblyVersion>
     <Authors>Ian Houghton</Authors>
     <Company>RedMorello Limited</Company>
-    <FileVersion>3.0.0.0</FileVersion>
+    <FileVersion>3.0.1.0</FileVersion>
     <Copyright>Copyright 2021</Copyright>
 
     <PackageIcon>doctypepicker.png</PackageIcon>
@@ -27,6 +27,7 @@
       1.0.0 - Intital Release
       2.0.3 - Bug fixes
       3.0.0 - Change to multi-targeted package
+      3.0.1 - Fix nuget target issue
     </PackageReleaseNotes>
 
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -66,7 +67,7 @@
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0" />
   </ItemGroup>
 
-  
+
 
   <Target Name="RemoveLuceneAnalyzer" BeforeTargets="CoreCompile">
     <ItemGroup>
